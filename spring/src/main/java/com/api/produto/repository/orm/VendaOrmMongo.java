@@ -16,9 +16,4 @@ public record VendaOrmMongo(
 ) {
 }
 
-record ItemVendaOrm(
-        String produtoId,
-        String nome,
-        Integer quantidade,
-        BigDecimal precoUnitario
-) {}
+
