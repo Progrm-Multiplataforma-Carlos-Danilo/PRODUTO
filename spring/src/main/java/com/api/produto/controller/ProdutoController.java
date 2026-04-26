@@ -36,11 +36,17 @@ public class ProdutoController {
         return ProdutoControllerAdapter.castResponse(produtoAtualizado);
     }
 
-    // DELETE
     @DeleteMapping("/produto/{id}")
     public String deletar(@PathVariable String id) {
         produtoRepository.deletar(id);
         return "Produto deletado com sucesso";
+    }
+
+    @GetMapping("/produto/listar")
+    public java.util.Collection<ProdutoResponse> listar() {
+        return produtoRepository.listar().stream()
+                .map(ProdutoControllerAdapter::castResponse)
+                .collect(java.util.stream.Collectors.toList());
     }
 
 }

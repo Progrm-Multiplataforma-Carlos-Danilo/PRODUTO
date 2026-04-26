@@ -2,8 +2,8 @@ package com.api.produto.controller.dto.request;
 
 import java.util.List;
 
-public record CompraRequest(
+public record VendaRequest(
         String clienteId,
-        List<String> produtoIds
+        List<ItemVendaRequest> itens
 ) {
 }

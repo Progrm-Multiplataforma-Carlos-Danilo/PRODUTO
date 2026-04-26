@@ -43,4 +43,11 @@ public class ProdutoRepositoryImpl implements ProdutoRepository {
         repository.deleteById(id);
     }
 
+    @Override
+    public java.util.Collection<Produto> listar() {
+        return repository.findAll().stream()
+                .map(ProdutoRepositoryAdapter::castOrm)
+                .collect(java.util.stream.Collectors.toList());
+    }
+
 }

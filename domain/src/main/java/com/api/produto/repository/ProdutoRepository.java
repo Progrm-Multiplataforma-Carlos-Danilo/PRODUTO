@@ -7,4 +7,5 @@ public interface ProdutoRepository {
     Produto consultar(String id);
     Produto atualizar(Produto prd);
     void deletar(String id);
+    java.util.Collection<Produto> listar();
 }
